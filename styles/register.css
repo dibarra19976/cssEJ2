@@ -11,10 +11,14 @@
   background-color: #f1f2f8ca !important;
 }
 
-.bg-primary-transparent{
-    background-color: #563c8079 !important;
+.bg-primary-transparent {
+  background: rgb(227, 203, 231);
+  background: linear-gradient(
+    62deg,
+    rgba(227, 203, 231, 0.7) 0%,
+    rgba(149, 92, 240, 0.7) 100%
+  );
 }
-
 
 .register div {
   animation: fadeIn 0.5s;
@@ -37,11 +41,11 @@
   padding-bottom: 30px;
 }
 .back-button:hover {
-  scale: 1.03 !important;
+  transform: scale(1.03) !important;
 }
 
 .btn-submit {
-  background-color: #92499c !important;
+  background-color: #563c80 !important;
   border-radius: 30px !important;
   color: #f1f2f8 !important;
   font-size: 12pt !important;
@@ -63,16 +67,15 @@
 
 .pfp img {
   width: 80px;
- 
 }
 
-.pfp label{
-    opacity: 70%;
-    transition: 0.2s;
+.pfp label {
+  opacity: 70%;
+  transition: 0.2s;
 }
 .pfp label:hover {
   opacity: 100%;
-  scale: 1.1;
+  transform: scale(1.1);
 }
 
 .pfp input[type="checkbox"] {
@@ -80,20 +83,22 @@
   display: none;
 }
 
-.pfp input[type="checkbox"]:checked ~ label{
-    opacity :0 !important;
-    transition: 0.2s;
-    visibility: none;
-    pointer-events: none;
+.pfp input[type="checkbox"]:checked ~ label {
+  opacity: 0 !important;
+  transition: 0.2s;
+  visibility: none;
+  pointer-events: none;
 }
 
 input[id="pfp1"]:checked ~ label[for="pfp1"],
 input[id="pfp2"]:checked ~ label[for="pfp2"],
-input[id="pfp3"]:checked ~ label[for="pfp3"]{
-    opacity :1 !important;
-    opacity: 100%;
-    scale: 1.1;
-    pointer-events:visible;
+input[id="pfp3"]:checked ~ label[for="pfp3"] {
+  opacity: 1 !important;
+  opacity: 100%;
+  transform: scale(1.1);
+  pointer-events: visible;
+  filter: drop-shadow(0 0 0.7rem #563c80);
+  animation: spin 1s;
 }
 
 input[type="text"] {
@@ -120,22 +125,32 @@ input[type="checkbox"] {
   margin-right: 10px !important;
 }
 
-input:focus{
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #e3cbe7 !important;
-    outline: 0 none !important;
+input:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #e3cbe7 !important;
+  outline: 0 none !important;
 }
 
-.back img{
-    height: 50px !important;
+.back img {
+  height: 50px !important;
 }
 
 @media (max-width: 768px) {
-    .register-fields {
-        background-color: #f1f2f884 !important;
-      }
-  
-      .bg-primary-transparent{
-        background-color: #563c80b9 !important;
-    }
-    
+  .register-fields {
+    background-color: #f1f2f884 !important;
   }
+
+  .bg-primary-transparent {
+    background-color: #563c80b9 !important;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+
+  to {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+}
