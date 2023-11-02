@@ -147,10 +147,10 @@ input:focus {
 
 @keyframes spin {
   from {
-    transform: rotate3d(0, 1, 0, 0deg);
+    transform: rotate3d(0, 1, 0, 0deg) scale(1.1);
   }
 
   to {
-    transform: rotate3d(0, 1, 0, 180deg);
+    transform: rotate3d(0, 1, 0, 180deg)  scale(1.1);
   }
 }
